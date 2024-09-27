@@ -1,0 +1,27 @@
+{
+  "name": "MiduHub",
+  "short_name": "MH",
+  "description": "Pagina de centralizacion de proyectos de midudev en una sola pagina.. donde podras encontrar paginas o cursos como midufest, miduconf, aprende node, 100 proyectos javascript y muchos más",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "",
+  "theme_color": "",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "type": "image/png",
+      "size": "192x192"
+    },
+    {
+      "src": "/icons/icon-256x256.png",
+      "type": "image/png",
+      "size": "256x256"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "type": "image/png",
+      "size": "512x512"
+    }
+  ],
+  "lang": "es-ES"
+}

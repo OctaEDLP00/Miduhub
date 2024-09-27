@@ -1,0 +1,50 @@
+---
+import Github from './icons/Github.astro'
+import WebApp from './icons/WebApp.astro'
+import Link from '@/components/Link.astro'
+import BlurredImg from '@/components/BlurredImg.astro'
+import type { ICardProps } from '@/types/index.d.ts'
+
+const {
+	project_name, description,
+  image, ghUrl, webUrl, ghRepoPrivate
+} = Astro.props as ICardProps
+---
+
+<section>
+	<div class='flex justify-around items-center flex-col gap-4'>
+		<BlurredImg
+			width={image.width}
+			height={image.height}
+			alt={image.alt}
+			urlOgImg={image.urlOgImg}
+		/>
+		<h3 class='uppercase text-2xl font-semibold text-center'>
+			{project_name}
+		</h3>
+		<div>
+			<Link
+				className='flex-1 inline-flex items-center justify-center rounded-lg bg-blue-400 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2'
+				href={webUrl}
+				target='_blank'
+				rel='noopener noreferrer'
+			>
+				<WebApp />
+				Web
+			</Link>
+			{
+				!ghRepoPrivate && (
+					<Link
+						className='flex-1 inline-flex items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium shadow transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2'
+						href={ghUrl}
+						target='_blank'
+						rel='noopener noreferrer'
+					>
+						<Github />
+						Github
+					</Link>
+				)
+			}
+		</div>
+	</div>
+</section>

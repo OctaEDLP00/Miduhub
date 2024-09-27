@@ -1,0 +1,19 @@
+---
+interface Props {
+	href?: string
+	className?: string
+	target?: '_blank' | '_top' | '_self' | '_parent'
+	rel?:  'noopener' | 'noreferrer' | 'noopener noreferrer'
+}
+
+const {
+	rel,
+	target,
+	href,
+	className = 'text-[#0081d7] hover:text-[#0099ff]'
+} = Astro.props
+---
+
+<a target={target} class={className} href={href} rel={rel}>
+	<slot />
+</a>

@@ -1,0 +1,33 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import Card from '@/components/Card.astro'
+import { MIDU_PROJECTS_AND_COURSES } from '@/const/projects'
+---
+
+<Layout
+	title="MiduHub | Pagina de centralización de proyectos de midudev"
+	description="Pagina de centralización de proyectos de @midudev en un solo lugar"
+>
+	<main class='w-full flex items-center justify-center mx-auto p-6'>
+		<div
+			class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center gap-4 p-4'
+		>
+			{
+				MIDU_PROJECTS_AND_COURSES.map(({
+					description,
+					externals_links: { github_repository, web, gh_repo_private },
+					project_name, image
+				}) => (
+					<Card
+						webUrl={web}
+						image={image}
+						description={description}
+						ghUrl={github_repository}
+						project_name={project_name}
+						ghRepoPrivate={gh_repo_private}
+					/>
+				))
+			}
+		</div>
+	</main>
+</Layout>

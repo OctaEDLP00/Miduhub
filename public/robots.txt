@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Host
+Host: https://_.dev
+
+# Sitemap
+Sitemap: https://_/sitemap.xml

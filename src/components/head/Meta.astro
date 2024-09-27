@@ -1,0 +1,69 @@
+---
+import type { Preload } from "@/types/index"
+
+interface Props {
+  title: string
+  description: string
+  preload?: Array<Preload>
+  canonical?: string
+  image?: string
+}
+
+const {
+	title, description, preload, canonical, image = ''
+} = Astro.props
+
+/*
+const determineCanonicalURL = () => {
+  if (Astro.url.host.includes("localhost"))
+    return "https://localhost:4321/og.png";
+  return canonical || Astro.url.pathname;
+};
+
+const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
+*/
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="theme-color" content="#0099ff" />
+<meta name="keywords" content="" />
+<meta name="msapplication-config" content="browserconfig.xml" />
+<meta name="msapplication-theme" content="#0099ff" />
+<!-- Og Images Twitter, Facebook, and Global Pages  -->
+<!-- Og Images Twitter  -->
+<meta name="twitter:card" content="" />
+<meta name="twitter:site" content="" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image, Astro.url)} />
+<!-- Og Images Facebook, and Global Pages  -->
+<meta name="og:image" content={new URL(image, Astro.url)} />
+<meta name="og:title" content={title} />
+<meta name="og:description" content={description} />
+<meta name="og:url" content={Astro.url} />
+<meta name="og:site_name" content="Miduhub" />
+<meta name="og:type" content="website" />
+<meta name="og:locale" content="es_ES" />
+<!-- Robots and googlebot -->
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<!-- Links preconnect -->
+<link rel="preconnect" href="" />
+<!-- Links: fonts and other sources -->
+<!-- <link rel="preload" href="" />  -->
+{
+  preload?.map(({
+		href, as, type,
+		rel = "preload",
+		crossorigin
+	}) => (
+    <link {rel} {href} {as} {type} {crossorigin} />
+  ))
+}
+<!-- <link rel="canonical" href={canonicalURL} /> -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+<title>{title}</title>

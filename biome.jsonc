@@ -1,0 +1,76 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+	"formatter": {
+		"enabled": true,
+		"attributePosition": "multiline",
+		"formatWithErrors": false,
+		"lineWidth": 80,
+		"indentStyle": "space",
+		"lineEnding": "lf"
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"a11y": {
+				"noRedundantAlt": "error",
+				"noSvgWithoutTitle": "warn",
+				"useAltText": "warn",
+				"useAnchorContent": "error",
+				"useHtmlLang": "error",
+				"useIframeTitle": "error"
+			}
+		}
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"javascript": {
+		"formatter": {
+			"enabled": true,
+			"indentStyle": "space",
+			"quoteStyle": "single",
+			"attributePosition": "multiline",
+			"arrowParentheses": "asNeeded",
+			"lineEnding": "lf",
+			"semicolons": "asNeeded",
+			"trailingCommas": "es5",
+			"lineWidth": 80,
+			"jsxQuoteStyle": "single"
+		},
+		"linter": {
+			"enabled": true
+		}
+	},
+	"json": {
+		"formatter": {
+			"enabled": true,
+			"indentStyle": "space",
+			"lineEnding": "lf",
+			"lineWidth": 80,
+			"trailingCommas": "none"
+		},
+		"linter": {
+			"enabled": true
+		},
+		"parser": {
+			"allowComments": true,
+			"allowTrailingCommas": false
+		}
+	},
+	"css": {
+		"formatter": {
+			"enabled": true,
+			"indentStyle": "space",
+			"lineWidth": 80,
+			"lineEnding": "lf",
+			"quoteStyle": "single"
+		},
+		"linter": {
+			"enabled": true
+		},
+		"parser": {
+			"allowWrongLineComments": true,
+			"cssModules": false
+		}
+	}
+}

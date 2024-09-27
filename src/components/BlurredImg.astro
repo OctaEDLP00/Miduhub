@@ -1,0 +1,26 @@
+---
+import type { IBlurredImg } from '@/types/index.d.ts'
+
+const { urlOgImg, alt, width, height } = Astro.props as IBlurredImg
+---
+
+<div class='relative'>
+	<img
+		loading='lazy'
+		src={urlOgImg}
+		alt={alt}
+		width={width}
+		height={height}
+		class='absolute rounded-lg aspect-video top-0 left-0 w-full h-full object-cover blur-lg z-10'
+	/>
+	<div class='relative z-20'>
+		<img
+			loading='lazy'
+			src={urlOgImg}
+			alt={alt}
+			width={width}
+			height={height}
+			class='rounded-lg object-cover aspect-video w-full h-full'
+		/>
+	</div>
+</div>
