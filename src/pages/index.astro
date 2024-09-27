@@ -14,14 +14,12 @@ import { MIDU_PROJECTS_AND_COURSES } from '@/const/projects'
 		>
 			{
 				MIDU_PROJECTS_AND_COURSES.map(({
-					description,
-					externals_links: { github_repository, web, gh_repo_private },
-					project_name, image
+					project_name, image,
+					externals_links: { github_repository, web, gh_repo_private }
 				}) => (
 					<Card
 						webUrl={web}
 						image={image}
-						description={description}
 						ghUrl={github_repository}
 						project_name={project_name}
 						ghRepoPrivate={gh_repo_private}
